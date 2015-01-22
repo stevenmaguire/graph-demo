@@ -10,8 +10,9 @@ class Neo4jPhpTest extends TestCase
 
     public function __construct()
     {
-        $this->client = new Client('demo.sb02.stations.graphenedb.com', 24789);
-        $this->client->getTransport()->setAuth('demo', 'MNmlVrLZPo79qtJFGAem');
+        $this->client = new Client(getenv('NEO4J_HOST'), getenv('NEO4J_PORT'));
+        $this->client->getTransport()
+            ->setAuth(getenv('NEO4J_USER'), getenv('NEO4J_PASSWORD'));
         $q = 'MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r';
         $query = new Query($this->client, $q);
         $result = $query->getResultSet();
