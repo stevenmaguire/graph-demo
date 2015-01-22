@@ -11,6 +11,7 @@
          syntaxCheck="false"
 >
     <logging>
+        <!--
         <log type="coverage-html"
                 target="./build/coverage/html"
                 charset="UTF-8"
@@ -19,6 +20,7 @@
                 highLowerBound="70"/>
           <log type="coverage-clover"
                 target="./build/coverage/log/coverage.xml"/>
+        -->
     </logging>
     <testsuites>
         <testsuite name="all">
